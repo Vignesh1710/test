@@ -1,22 +1,18 @@
-%% Mermaid ER diagram for Ad Sales Digital Advertising Domain
-
-erDiagram
-  ADVERTISER ||--o{ AGENCY : "works with"
-  ADVERTISER ||--o{ SALES_REPRESENTATIVE : "engages"
-  ADVERTISER ||--o{ DIGITAL_ADVERTISEMENT : "owns"
-  ADVERTISER ||--o{ SALES_TRANSACTION : "creates"
-  AGENCY ||--o{ SALES_REPRESENTATIVE : "employs"
-  AGENCY ||--o{ SALES_TRANSACTION : "manages"
-  SALES_REPRESENTATIVE ||--o{ SALES_TRANSACTION : "handles"
-  DIGITAL_ADVERTISEMENT }o--|| CONTENT_PROGRAM : "placed in"
-  DIGITAL_ADVERTISEMENT }o--|| AD_INVENTORY : "fills"
-  DIGITAL_ADVERTISEMENT }o--|| PERFORMANCE_METRICS : "generates"
-  CONTENT_PROGRAM ||--o{ NETWORK : "aired on"
-  CONTENT_PROGRAM ||--o{ DISTRIBUTION_PARTNER : "distributed by"
-  CONTENT_PROGRAM ||--o{ DEVICE_PLATFORM : "viewed on"
-  NETWORK ||--o{ DISTRIBUTION_PARTNER : "partners with"
-  AD_INVENTORY ||--o{ DEVICE_PLATFORM : "delivered via"
-  AD_INVENTORY ||--o{ SALES_TRANSACTION : "sold in"
-  SALES_TRANSACTION ||--o{ PERFORMANCE_METRICS : "measured by"
-  SALES_TRANSACTION ||--o{ AUDIENCE_DEMOGRAPHICS : "targets"
-  AUDIENCE_DEMOGRAPHICS ||--o{ PERFORMANCE_METRICS : "measured for"
+mermaid
+graph TD
+    Advertiser["Advertiser"] -->|creates| Campaign["Digital Advertisement"]
+    Advertiser -->|works with| Agency["Agency"]
+    Agency -->|manages| Campaign
+    Campaign -->|delivered on| Device["Device Platform"]
+    Campaign -->|placed in| Inventory["Ad Inventory"]
+    Campaign -->|targets| Audience["Audience Demographics"]
+    Campaign -->|measured by| Metrics["Performance Metrics"]
+    Campaign -->|sold by| SalesRep["Sales Representative"]
+    Campaign -->|linked to| SalesTxn["Sales Transaction"]
+    Campaign -->|placed in| Content["Content Program"]
+    Content -->|distributed by| Network["Network"]
+    Network -->|partners with| DistPartner["Distribution Partner"]
+    DistPartner -->|delivers to| Device
+    Inventory -->|organized by| Content
+    SalesTxn -->|processed by| SalesRep
+    SalesTxn -->|tracked by| Metrics
