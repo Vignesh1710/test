@@ -1,6 +1,10 @@
+%% Mermaid ER diagram for Ad Sales Digital Advertising Domain
+
+erDiagram
   ADVERTISER ||--o{ AGENCY : "works with"
-  ADVERTISER ||--o{ SALES_TRANSACTION : "creates"
+  ADVERTISER ||--o{ SALES_REPRESENTATIVE : "engages"
   ADVERTISER ||--o{ DIGITAL_ADVERTISEMENT : "owns"
+  ADVERTISER ||--o{ SALES_TRANSACTION : "creates"
   AGENCY ||--o{ SALES_REPRESENTATIVE : "employs"
   AGENCY ||--o{ SALES_TRANSACTION : "manages"
   SALES_REPRESENTATIVE ||--o{ SALES_TRANSACTION : "handles"
