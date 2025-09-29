@@ -1,5 +1,3 @@
-mermaid
-erDiagram
   ADVERTISER ||--o{ AGENCY : "works with"
   ADVERTISER ||--o{ SALES_TRANSACTION : "creates"
   ADVERTISER ||--o{ DIGITAL_ADVERTISEMENT : "owns"
