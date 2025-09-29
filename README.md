@@ -1,4 +1,3 @@
-mermaid
 graph TD
     Advertiser["Advertiser"] -->|creates| Campaign["Digital Advertisement"]
     Advertiser -->|works with| Agency["Agency"]
