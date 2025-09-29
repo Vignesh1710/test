@@ -1,1 +1,20 @@
-# test
+mermaid
+erDiagram
+  ADVERTISER ||--o{ AGENCY : "works with"
+  ADVERTISER ||--o{ SALES_TRANSACTION : "creates"
+  ADVERTISER ||--o{ DIGITAL_ADVERTISEMENT : "owns"
+  AGENCY ||--o{ SALES_REPRESENTATIVE : "employs"
+  AGENCY ||--o{ SALES_TRANSACTION : "manages"
+  SALES_REPRESENTATIVE ||--o{ SALES_TRANSACTION : "handles"
+  DIGITAL_ADVERTISEMENT }o--|| CONTENT_PROGRAM : "placed in"
+  DIGITAL_ADVERTISEMENT }o--|| AD_INVENTORY : "fills"
+  DIGITAL_ADVERTISEMENT }o--|| PERFORMANCE_METRICS : "generates"
+  CONTENT_PROGRAM ||--o{ NETWORK : "aired on"
+  CONTENT_PROGRAM ||--o{ DISTRIBUTION_PARTNER : "distributed by"
+  CONTENT_PROGRAM ||--o{ DEVICE_PLATFORM : "viewed on"
+  NETWORK ||--o{ DISTRIBUTION_PARTNER : "partners with"
+  AD_INVENTORY ||--o{ DEVICE_PLATFORM : "delivered via"
+  AD_INVENTORY ||--o{ SALES_TRANSACTION : "sold in"
+  SALES_TRANSACTION ||--o{ PERFORMANCE_METRICS : "measured by"
+  SALES_TRANSACTION ||--o{ AUDIENCE_DEMOGRAPHICS : "targets"
+  AUDIENCE_DEMOGRAPHICS ||--o{ PERFORMANCE_METRICS : "measured for"
